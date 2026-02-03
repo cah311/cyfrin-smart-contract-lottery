@@ -38,7 +38,7 @@ contract Raffle is VRFConsumerBaseV2Plus {
     address payable[] private s_players;
     uint256 private s_lastTimeStamp;
     address private s_recentWinner;
-    RaffleState private s_raffleState;
+    RaffleState private s_raffleState; // start as open
    
 
     /** Events */
@@ -152,5 +152,9 @@ contract Raffle is VRFConsumerBaseV2Plus {
     /* Getter Functions */
     function getEntranceFee() external view returns(uint256) {
         return i_entranceFee;
+    }
+
+    function getRaffleState() external view returns (RaffleState) {
+        return s_raffleState;
     }
 }
