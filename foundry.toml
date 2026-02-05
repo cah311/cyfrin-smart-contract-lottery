@@ -7,6 +7,10 @@ remappings = [
     "forge-std/=lib/forge-std/src/",
     "@solmate=lib/solmate/src/"
 ]
+fs_permissions = [
+    { access = "read", path = "./broadcast" },
+    { access = "read", path = "./reports" },
+]
 [lint]
 exclude_lints = [
     "screaming-snake-case-immutable",
