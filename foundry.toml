@@ -5,12 +5,17 @@ libs = ["lib"]
 remappings = [
     "@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/",
     "forge-std/=lib/forge-std/src/",
-    "@solmate=lib/solmate/src/"
+    "@solmate=lib/solmate/src/",
+    "@openzeppelin/=lib/openzeppelin-contracts/"
 ]
 fs_permissions = [
     { access = "read", path = "./broadcast" },
     { access = "read", path = "./reports" },
 ]
+
+[fuzz]
+runs = 256
+
 [lint]
 exclude_lints = [
     "screaming-snake-case-immutable",
